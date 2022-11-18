@@ -1,4 +1,6 @@
 <?php
+error_reporting(~E_NOTICE);
+
 function build_calendar($month, $year)
 {
 
@@ -192,7 +194,7 @@ function build_nextMonth($month, $year)
         <form action="" method="post">
 
             <div class="nav-link" id="nav-link">
-                <button name="homebtn" class="sidebtn active"><i class='bx bx-home-alt'></i> home</button>
+                <button name="homebtn" class="sidebtn"><i class='bx bx-home-alt'></i> home</button>
                 <button name="filterbtn" class="sidebtn"><i class='bx bx-grid-alt'></i> filters & labels</button>
             </div>
 
@@ -209,52 +211,29 @@ function build_nextMonth($month, $year)
 
         </form>
 
-
     </section>
 
-    <?php
-        parse_str($_SERVER['QUERY_STRING']);
-
-        if ($m == "") {
-
-            $dateComponents = getdate();
-            $month = $dateComponents['mon'];
-            $year = $dateComponents['year'];
-        } else {
-
-            $month = $m;
-            $year = $y;
-
-        }
-
-    
-    if (!isset($_POST['filterbtn']) || isset($_POST['homebtn'])) {
- ?>
-    <!-- BODY -->
+    <!-- HOME BODY -->
     <section class="body-container">
+        
+        <?php if(isset($_POST['homebtn']) || !isset($_POST['filterbtn'])){ ?>
+        <section class="home-container">
+            <h1>My Work</h1>
 
+            <form action="" method="post" class="mywork" id="mywork">
+                <div class="work-nav">
+                    <button class="todo" name="todo" id="todo">to do</button>
+                    <button class="done" name="done" id="done">done</button>
+                </div>
+            
 
-
-        <h1>My Work</h1>
-
-        <form action="" method="post" class="mywork" id="mywork">
-
-
-            <div class="work-nav">
-                <a href=""><button class="todo active-btn" name="todo" id="todo">to do</button></a>
-                <a href=""><button class="done" name="done" id="done">done</button></a>
-            </div>
-
-            <?php
-
-
-        if (!isset($_POST['done'])) {
-            if(isset($_POST['todo'])){ ?>
-
+            <?php if(!isset($_POST['done']) || isset($_POST['todo'])){ ?>
+            <!-- TODO -->
             <div class="todo-body" id="todo-body">
+                
                 <!-- TODAY -->
                 <section class="now">
-
+                
                     <h1 class="now-head"><i onclick="changeIcon(this, document.getElementById('now-empty'))" class='bx bxs-down-arrow'></i>today</h1>
 
                     <div class="now-empty" id="now-empty" name="now">
@@ -270,10 +249,10 @@ function build_nextMonth($month, $year)
 
                 </section>
 
-                <!-- OVERDUE -->
-
+                            <!-- OVERDUE -->
+ 
                 <section class="overdue">
-
+ 
                     <h1 class="overdue-head"><i onclick="changeIcon(this, document.getElementById('overdue-empty'))" class='bx bxs-down-arrow'></i>overdue</h1>
 
                     <div class="overdue-empty" id="overdue-empty" name="overdue">
@@ -291,7 +270,7 @@ function build_nextMonth($month, $year)
 
                 <!-- UPCOMING -->
                 <section class="upcoming">
-
+ 
                     <h1 class="upcoming-head"><i onclick="changeIcon(this, document.getElementById('upcoming-empty'))" class='bx bxs-down-arrow'></i>upcoming</h1>
 
                     <div class="upcoming-empty" id="upcoming-empty" name="upcoming">
@@ -307,18 +286,17 @@ function build_nextMonth($month, $year)
 
                 </section>
 
-                
-
-
             </div>
 
-            <?php }} else {
-            ?>
 
+            <?php 
+            } elseif(isset($_POST['done'])){
+             ?>
+            <!-- DONE -->
             <div class="done-body" id="done-body">
 
-                <section class="done-section">
-
+            <section class="done-section">
+ 
                 <div class="done-empty" id="done-empty" name="done-empty">
                     <div class="empty-container">
                         <img src="http://localhost/taskism/images/Feeling Blue-bro.png" alt="">
@@ -330,13 +308,89 @@ function build_nextMonth($month, $year)
 
                 </div>
 
-                </section>
-                    
+            </section>
+
             </div>
 
-        <?php }
-    } else {
+            <?php } ?>
+            </form>
 
+        </section>
+
+        <?php } elseif(isset($_POST['filterbtn'])){ ?>
+        <section class="filter-container">
+            <h1>Filters & Labels</h1>
+
+            <form action="" method="post" class="filter-labels" id="filter-labels">
+
+                <div class="work-nav">
+                    <button class="urgent" name="urgentbtn" id="urgent" style="color: #F24E1E;">urgent</button>
+                    <button class="high" name="highbtn" id="high" style="color: #E69B00;">high</button>
+                    <button class="normal" name="normalbtn" id="normal" style="color: #005B96;">normal</button>
+                    <button class="low" name="lowbtn" id="low" style="color: #6C8054;">low</button>
+                </div>
+
+
+                <?php if(isset($_POST['urgentbtn']) ||
+                    !isset($_POST['highbtn']) || 
+                    !isset($_POST['normalbtn']) || !isset($_POST['lowbtn'])){ ?>
+
+                <!-- URGENT -->
+                <div class="urgent-body" id="urgent-body">
+ 
+                    <section class="urgent-section">
+    
+                        <div class="urgent-empty" id="urgent-empty" name="urgent-empty">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/urgent.png" alt="urgent">
+                            </div>
+                            <div class="text">
+                                <p class="span">Yay! No urgent tasks!</p>
+                                <p class="span-sub">Urgent tasks will appear here.</p>
+                            </div>
+                        </div>
+    
+                    </section>
+ 
+                </div>
+
+                <?php } elseif(isset($_POST['high'])){ ?>
+
+                <!-- HIGH -->
+                <div class="high-body" id="high-body">
+
+                    <section class="high-section">
+
+                        <div class="high-empty" id="high-empty" name="high-empty">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Enthusiastic-bro.png" alt="high">
+                            </div>
+                            <div class="text">
+                                <p class="span">Yay! No high priority tasks!</p>
+                                <p class="span-sub">High priority tasks will appear here.</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+                
+                <?php } ?>
+
+
+
+            </form>
+
+
+        </section>
+        <?php } ?>
+    </section>
+   
+
+    <!-- CALENDAR -->
+    <section class="calendar-container">
+    
+    <?php
         parse_str($_SERVER['QUERY_STRING']);
 
         if ($m == "") {
@@ -349,20 +403,11 @@ function build_nextMonth($month, $year)
             $month = $m;
             $year = $y;
 
-        }?>
-
-        <section class="body-container"></section>
-
-        <?php } 
+        }
         
-        ?>
-    </form>
 
-    </section>
 
-    <!-- CALENDAR -->
-    <section class="calendar-container">
-
+    ?>
         <div class="fixed-calendar">
             <h1>Calendar</h1>
 
@@ -371,8 +416,24 @@ function build_nextMonth($month, $year)
                 <div class="calendarHead">
                     <?php
 
+                    parse_str($_SERVER['QUERY_STRING']);
 
+                    if(isset($m)){
+                        if ($m == "") {
+
+                            $dateComponents = getdate();
+                            $month = $dateComponents['mon'];
+                            $year = $dateComponents['year'];
+                        } else {
+
+                            $month = $m;
+                            $year = $y;
+
+                        }
+                        
+                    }
                     echo build_calendar($month, $year);
+
                     ?>
                 </div>
             </div>
@@ -408,24 +469,14 @@ function build_nextMonth($month, $year)
         var header = document.getElementsById('nav-link');
         var btns = header.getElementsByClassName('sidebtn');
 
-        // header.onclick
-
-        // for(var i = 0; i <btns.length; i++){
-        //     btns[i].addEventListener('click', function(){
-        //         alert("wahahah");
-        //         var current = document.getElementsByClassName("active");
-        //         current[0].className = current[0].className.replace(" active", "");
-        //         this.className += " active";
-        //     });
-        // }
-
         for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
         });
         }
+
 
     </script>
 </body>

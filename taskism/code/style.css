@@ -193,11 +193,11 @@ body{
     scroll-behavior: smooth;
 }
 
-.body-container::-webkit-scrollbar{
+.body-container::-webkit-scrollbar, .filter-container::-webkit-scrollbar{
     display: none;
 }
 
-.body-container h1{
+.body-container .home-container h1, .filter-container h1{
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
@@ -208,16 +208,17 @@ body{
     margin-top: 10px;
 }
 
-.body-container form .work-nav{
+.home-container form .work-nav, .filter-container form .work-nav{
     border-bottom: 1px solid #6C8054;
     height: 30px;
 }
 
-.body-container form .work-nav a{
-    padding: 20px;
+.home-container form .work-nav button, .filter-container form .work-nav button{
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.body-container form .work-nav button{
+.home-container form .work-nav button, .filter-container form .work-nav button{
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
@@ -228,14 +229,14 @@ body{
     cursor: pointer;
 }
 
-.body-container form .work-nav button:hover{
+.home-container form .work-nav button:hover, .filter-container form .work-nav button:hover{
     border-bottom: 4px solid #6C8054;
     color: #6F4E37;
 }
 
-.body-container form .todo-body .now h1, 
-.body-container form .todo-body .overdue h1, 
-.body-container form .todo-body .upcoming h1{
+.home-container form .todo-body .now h1, 
+.home-container form .todo-body .overdue h1, 
+.home-container form .todo-body .upcoming h1{
     font-family: 'Fredoka';
     font-style: normal;
     font-weight: 600;
@@ -251,39 +252,59 @@ body{
     color: #6F4E37;
 }
 
-.body-container form .todo-body .now .now-empty,
-.body-container form .todo-body .overdue .overdue-empty,
-.body-container form .todo-body .upcoming .upcoming-empty,
-.body-container form .done-body .done-section .done-empty{
+.home-container form .todo-body .now .now-empty,
+.home-container form .todo-body .overdue .overdue-empty,
+.home-container form .todo-body .upcoming .upcoming-empty,
+.home-container form .done-body .done-section .done-empty,
+.filter-container form .urgent-body .urgent-section .urgent-empty,
+.filter-container form .high-body .high-section .high-empty,
+.filter-container form .normal-body .normal-section .normal-empty,
+.filter-container form .low-body .low-section .low-empty{
     border: 1px solid #DC9C74;
     border-radius: 10px;
 }
 
-.body-container form .done-body .done-section .done-empty{
+.home-container form .done-body .done-section .done-empty,
+.filter-container form .urgent-body .urgent-section .urgent-empty,
+.filter-container form .high-body .high-section .high-empty,
+.filter-container form .normal-body .normal-section .normal-empty,
+.filter-container form .low-body .low-section .low-empty{
     margin-top: 20px;
 }
 
-.body-container form .todo-body .now .now-empty .empty-container,
-.body-container form .todo-body .overdue .overdue-empty .empty-container,
-.body-container form .todo-body .upcoming .upcoming-empty .empty-container,
-.body-container form .done-body .done-section .done-empty .empty-container{
+.home-container form .todo-body .now .now-empty .empty-container,
+.home-container form .todo-body .overdue .overdue-empty .empty-container,
+.home-container form .todo-body .upcoming .upcoming-empty .empty-container,
+.home-container form .done-body .done-section .done-empty .empty-container,
+.filter-container form .urgent-body .urgent-section .urgent-empty .empty-container,
+.filter-container form .high-body .high-section .high-empty .empty-container,
+.filter-container form .normal-body .normal-section .normal-empty .empty-container,
+.filter-container form .low-body .low-section .low-empty .empty-container{
     display: flex;
 }
 
-.body-container form .todo-body .now .now-empty .empty-container img,
-.body-container form .todo-body .overdue .overdue-empty .empty-container img,
-.body-container form .todo-body .upcoming .upcoming-empty .empty-container img,
-.body-container form .done-body .done-section .done-empty .empty-container img{
+.home-container form .todo-body .now .now-empty .empty-container img,
+.home-container form .todo-body .overdue .overdue-empty .empty-container img,
+.home-container form .todo-body .upcoming .upcoming-empty .empty-container img,
+.home-container form .done-body .done-section .done-empty .empty-container img,
+.filter-container form .urgent-body .urgent-section .urgent-empty .empty-container img,
+.filter-container form .high-body .high-section .high-empty .empty-container img,
+.filter-container form .normal-body .normal-section .normal-empty .empty-container img,
+.filter-container form .low-body .low-section .low-empty .empty-container img   {
     height: 257px;
     width: 269px;
     justify-content: center;
     margin: auto;
 }
 
-.body-container form .todo-body .now .now-empty .text,
-.body-container form .todo-body .overdue .overdue-empty .text,
-.body-container form .todo-body .upcoming .upcoming-empty .text,
-.body-container form .done-body .done-section .done-empty .text{
+.home-container form .todo-body .now .now-empty .text,
+.home-container form .todo-body .overdue .overdue-empty .text,
+.home-container form .todo-body .upcoming .upcoming-empty .text,
+.home-container form .done-body .done-section .done-empty .text,
+.filter-container form .urgent-body .urgent-section .urgent-empty .text,
+.filter-container form .high-body .high-section .high-empty .text,
+.filter-container form .normal-body .normal-section .normal-empty .text,
+.filter-container form .low-body .low-section .low-empty .text{
     height: 64px;
     left: 619px;
     text-align: center;
@@ -291,10 +312,14 @@ body{
 
 }
 
-.body-container form .todo-body .now .now-empty .text .span,
-.body-container form .todo-body .overdue .overdue-empty .span,
-.body-container form .todo-body .upcoming .upcoming-empty .span,
-.body-container form .done-body .done-section .done-empty .span{
+.home-container form .todo-body .now .now-empty .text .span,
+.home-container form .todo-body .overdue .overdue-empty .span,
+.home-container form .todo-body .upcoming .upcoming-empty .span,
+.home-container form .done-body .done-section .done-empty .span,
+.filter-container form .urgent-body .urgent-section .urgent-empty .span,
+.filter-container form .high-body .high-section .high-empty .span,
+.filter-container form .normal-body .normal-section .normal-empty .span,
+.filter-container form .low-body .low-section .low-empty .span{
     font-family: 'Fredoka';
     font-style: normal;
     font-weight: 700;
@@ -304,10 +329,14 @@ body{
     
 }
 
-.body-container form .todo-body .now .now-empty .text .span-sub,
-.body-container form .todo-body .overdue .overdue-empty .span-sub,
-.body-container form .todo-body .upcoming .upcoming-empty .span-sub,
-.body-container form .done-body .done-section .done-empty .span-sub{
+.home-container form .todo-body .now .now-empty .text .span-sub,
+.home-container form .todo-body .overdue .overdue-empty .span-sub,
+.home-container form .todo-body .upcoming .upcoming-empty .span-sub,
+.home-container form .done-body .done-section .done-empty .span-sub,
+.filter-container form .urgent-body .urgent-section .urgent-empty .span-sub,
+.filter-container form .high-body .high-section .high-empty .span-sub,
+.filter-container form .normal-body .normal-section .normal-empty .span-sub,
+.filter-container form .low-body .low-section .low-empty .span-sub{
     font-family: 'Fredoka';
     font-style: normal;
     font-weight: 400;
