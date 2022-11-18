@@ -148,12 +148,13 @@ function build_nextMonth($month, $year)
 }
 
 
-?> 
+?>
 
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -166,15 +167,18 @@ function build_nextMonth($month, $year)
 
     <!-- CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         <?php include "style.css" ?>
     </style>
 
-    
+
 
 </head>
+
 <body>
 
     <!-- NAVIGATION -->
@@ -191,11 +195,12 @@ function build_nextMonth($month, $year)
         </div>
         <!-- navigation -->
 
-        <form action="" method="post">
+        <form action="" method="get">
 
             <div class="nav-link" id="nav-link">
                 <button name="homebtn" class="sidebtn"><i class='bx bx-home-alt'></i> home</button>
-                <button name="filterbtn" class="sidebtn"><i class='bx bx-grid-alt'></i> filters & labels</button>
+                <button name="filterbtn" class="sidebtn" onclick="location.href='/taskism/code/filters.php'"><i
+                        class='bx bx-grid-alt'></i> filters & labels</button>
             </div>
 
             <div class="profile">
@@ -205,7 +210,7 @@ function build_nextMonth($month, $year)
 
                 <div class="profile-link">
                     <a><button class="help-link"><i class='bx bx-help-circle'></i> help</button></a>
-                    <a href="#"><button class="logout-link"><i class='bx bx-exit'></i>  logout</button></a>
+                    <a href="#"><button class="logout-link"><i class='bx bx-exit'></i> logout</button></a>
                 </div>
             </div>
 
@@ -215,8 +220,8 @@ function build_nextMonth($month, $year)
 
     <!-- HOME BODY -->
     <section class="body-container">
-        
-        <?php if(isset($_POST['homebtn']) || !isset($_POST['filterbtn'])){ ?>
+
+        <?php if (isset($_GET['homebtn']) || !isset($_GET['filterbtn'])) { ?>
         <section class="home-container">
             <h1>My Work</h1>
 
@@ -225,104 +230,112 @@ function build_nextMonth($month, $year)
                     <button class="todo" name="todo" id="todo">to do</button>
                     <button class="done" name="done" id="done">done</button>
                 </div>
-            
 
-            <?php if(!isset($_POST['done']) || isset($_POST['todo'])){ ?>
-            <!-- TODO -->
-            <div class="todo-body" id="todo-body">
-                
-                <!-- TODAY -->
-                <section class="now">
-                
-                    <h1 class="now-head"><i onclick="changeIcon(this, document.getElementById('now-empty'))" class='bx bxs-down-arrow'></i>today</h1>
 
-                    <div class="now-empty" id="now-empty" name="now">
-                        <div class="empty-container">
-                            <img src="http://localhost/taskism/images/Enthusiastic-pana.png" alt="">
-                        </div>
+                <?php if (!isset($_POST['done']) || isset($_POST['todo'])) { ?>
+                <!-- TODO -->
+                <div class="todo-body" id="todo-body">
+
+                    <!-- TODAY -->
+                    <section class="now">
+
+                        <h1 class="now-head"><i onclick="changeIcon(this, document.getElementById('now-empty'))"
+                                class='bx bxs-down-arrow'></i>today</h1>
+
+                        <div class="now-empty" id="now-empty" name="now">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Enthusiastic-pana.png" alt="">
+                            </div>
                             <div class="text">
                                 <p class="span">Yay! No tasks for today!</p>
                                 <p class="span-sub">Tasks scheduled today will appear here.</p>
                             </div>
 
-                    </div>
-
-                </section>
-
-                            <!-- OVERDUE -->
- 
-                <section class="overdue">
- 
-                    <h1 class="overdue-head"><i onclick="changeIcon(this, document.getElementById('overdue-empty'))" class='bx bxs-down-arrow'></i>overdue</h1>
-
-                    <div class="overdue-empty" id="overdue-empty" name="overdue">
-                        <div class="empty-container">
-                            <img src="http://localhost/taskism/images/Honesty-amico.png" alt="">
                         </div>
+
+                    </section>
+
+                    <!-- OVERDUE -->
+
+                    <section class="overdue">
+
+                        <h1 class="overdue-head"><i onclick="changeIcon(this, document.getElementById('overdue-empty'))"
+                                class='bx bxs-down-arrow'></i>overdue</h1>
+
+                        <div class="overdue-empty" id="overdue-empty" name="overdue">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Honesty-amico.png" alt="">
+                            </div>
                             <div class="text">
                                 <p class="span">Yay! No overdue tasks!</p>
                                 <p class="span-sub">Overdue tasks will appear here.</p>
                             </div>
 
-                    </div>
-
-                </section>
-
-                <!-- UPCOMING -->
-                <section class="upcoming">
- 
-                    <h1 class="upcoming-head"><i onclick="changeIcon(this, document.getElementById('upcoming-empty'))" class='bx bxs-down-arrow'></i>upcoming</h1>
-
-                    <div class="upcoming-empty" id="upcoming-empty" name="upcoming">
-                        <div class="empty-container">
-                            <img src="http://localhost/taskism/images/Product quality-rafiki.png" alt="">
                         </div>
+
+                    </section>
+
+                    <!-- UPCOMING -->
+                    <section class="upcoming">
+
+                        <h1 class="upcoming-head"><i
+                                onclick="changeIcon(this, document.getElementById('upcoming-empty'))"
+                                class='bx bxs-down-arrow'></i>upcoming</h1>
+
+                        <div class="upcoming-empty" id="upcoming-empty" name="upcoming">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Product quality-rafiki.png" alt="">
+                            </div>
                             <div class="text">
                                 <p class="span">Yay! No upcoming taks!</p>
                                 <p class="span-sub">Upcoming tasks will appear here.</p>
                             </div>
 
-                    </div>
+                        </div>
 
-                </section>
-
-            </div>
-
-
-            <?php 
-            } elseif(isset($_POST['done'])){
-             ?>
-            <!-- DONE -->
-            <div class="done-body" id="done-body">
-
-            <section class="done-section">
- 
-                <div class="done-empty" id="done-empty" name="done-empty">
-                    <div class="empty-container">
-                        <img src="http://localhost/taskism/images/Feeling Blue-bro.png" alt="">
-                    </div>
-                    <div class="text">
-                        <p class="span">Oops! You haven't done any tasks yet.</p>
-                        <p class="span-sub">Checked tasks will appear here.</p>
-                    </div>
+                    </section>
 
                 </div>
 
-            </section>
 
-            </div>
+                <?php
+            } elseif (isset($_POST['done'])) {
+            ?>
+                <!-- DONE -->
+                <div class="done-body" id="done-body">
 
-            <?php } ?>
+                    <section class="done-section">
+
+                        <div class="done-empty" id="done-empty" name="done-empty">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Feeling Blue-bro.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p class="span">Oops! You haven't done any tasks yet.</p>
+                                <p class="span-sub">Checked tasks will appear here.</p>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <?php } ?>
             </form>
 
         </section>
 
-        <?php } elseif(isset($_POST['filterbtn'])){ ?>
+        <?php
+
+        } elseif (isset($_GET['filterbtn'])) {
+
+        ?>
+
         <section class="filter-container">
             <h1>Filters & Labels</h1>
 
-            <form action="" method="post" class="filter-labels" id="filter-labels">
-
+            <form action="" method="post">
                 <div class="work-nav">
                     <button class="urgent" name="urgentbtn" id="urgent" style="color: #F24E1E;">urgent</button>
                     <button class="high" name="highbtn" id="high" style="color: #E69B00;">high</button>
@@ -330,16 +343,11 @@ function build_nextMonth($month, $year)
                     <button class="low" name="lowbtn" id="low" style="color: #6C8054;">low</button>
                 </div>
 
-
-                <?php if(isset($_POST['urgentbtn']) ||
-                    !isset($_POST['highbtn']) || 
-                    !isset($_POST['normalbtn']) || !isset($_POST['lowbtn'])){ ?>
-
-                <!-- URGENT -->
+            <?php if(isset($_POST['urgentbtn'])){ ?>
                 <div class="urgent-body" id="urgent-body">
- 
-                    <section class="urgent-section">
     
+                    <section class="urgent-section">
+
                         <div class="urgent-empty" id="urgent-empty" name="urgent-empty">
                             <div class="empty-container">
                                 <img src="http://localhost/taskism/images/urgent.png" alt="urgent">
@@ -349,76 +357,151 @@ function build_nextMonth($month, $year)
                                 <p class="span-sub">Urgent tasks will appear here.</p>
                             </div>
                         </div>
-    
+
                     </section>
- 
+
                 </div>
-
-                <?php } elseif(isset($_POST['high'])){ ?>
-
-                <!-- HIGH -->
+            <?php } elseif(isset($_POST['highbtn'])){ ?>
                 <div class="high-body" id="high-body">
-
+ 
                     <section class="high-section">
-
+    
                         <div class="high-empty" id="high-empty" name="high-empty">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Enthusiastic-bro.png" alt="high">
+                                <img src="http://localhost/taskism/images/Enthusiastic-bro.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No high priority tasks!</p>
                                 <p class="span-sub">High priority tasks will appear here.</p>
                             </div>
                         </div>
+    
+                    </section>
+ 
+                </div>
+
+            <?php } elseif(isset($_POST['normalbtn'])){ ?>
+                <div class="normal-body" id="normal-body">
+
+                    <section class="normal-section">
+
+                        <div class="normal-empty" id="normal-empty" name="normal-empty">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Freelancer-bro.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p class="span">Yay! No normal priority tasks!</p>
+                                <p class="span-sub">Normal low tasks will appear here.</p>
+                            </div>
+                        </div>
 
                     </section>
 
                 </div>
-                
-                <?php } ?>
+
+            <?php }elseif(isset($_POST['lowbtn'])){ ?>
+
+            <div class="low-body" id="low-body">
+
+                <section class="low-section">
+
+                    <div class="low-empty" id="low-empty" name="low-empty">
+                        <div class="empty-container">
+                            <img src="http://localhost/taskism/images/Cheer up-rafiki.png" alt="">
+                        </div>
+                        <div class="text">
+                            <p class="span">Yay! No low priority tasks!</p>
+                            <p class="span-sub">Low priority tasks will appear here.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+
+            <?php } ?>
 
 
 
             </form>
 
-
         </section>
+        <!-- <section class="filter-container">
+            <h1>Filters & Labels</h1>
+
+            <form action="" method="get" class="filter-labels" id="filter-labels">
+
+                <div class="work-nav">
+                    <button class="urgent" name="urgentbtn" id="urgent" style="color: #F24E1E;">urgent</button>
+                    <button class="high" name="highbtn" id="high" style="color: #E69B00;">high</button>
+                    <button class="normal" name="normalbtn" id="normal" style="color: #005B96;">normal</button>
+                    <button class="low" name="lowbtn" id="low" style="color: #6C8054;">low</button>
+                </div>
+
+                URGENT 
+                <?php
+            // if(isset($_GET['urgentbtn']) || !isset($_GET['highbtn'])){ ?>
+
+                    <div class="urgent-body" id="urgent-body">
+ 
+                        <section class="urgent-section">
+
+                            <div class="urgent-empty" id="urgent-empty" name="urgent-empty">
+                                <div class="empty-container">
+                                    <img src="http://localhost/taskism/images/urgent.png" alt="urgent">
+                                </div>
+                                <div class="text">
+                                    <p class="span">Yay! No urgent tasks!</p>
+                                    <p class="span-sub">Urgent tasks will appear here.</p>
+                                </div>
+                            </div>
+
+                        </section>
+
+                    </div>
+                <?php
+            // } ?>
+
+            </form>
+
+
+        </section> -->
         <?php } ?>
     </section>
    
 
     <!-- CALENDAR -->
-    <section class="calendar-container">
-    
-    <?php
-        parse_str($_SERVER['QUERY_STRING']);
+        <section class="calendar-container">
 
-        if ($m == "") {
+            <?php
+    parse_str($_SERVER['QUERY_STRING']);
 
-            $dateComponents = getdate();
-            $month = $dateComponents['mon'];
-            $year = $dateComponents['year'];
-        } else {
+    if ($m == "") {
 
-            $month = $m;
-            $year = $y;
+        $dateComponents = getdate();
+        $month = $dateComponents['mon'];
+        $year = $dateComponents['year'];
+    } else {
 
-        }
-        
+        $month = $m;
+        $year = $y;
+
+    }
+
 
 
     ?>
-        <div class="fixed-calendar">
-            <h1>Calendar</h1>
+            <div class="fixed-calendar">
+                <h1>Calendar</h1>
 
-            <div class="container">
+                <div class="container">
 
-                <div class="calendarHead">
-                    <?php
+                    <div class="calendarHead">
+                        <?php
 
                     parse_str($_SERVER['QUERY_STRING']);
 
-                    if(isset($m)){
+                    if (isset($m)) {
                         if ($m == "") {
 
                             $dateComponents = getdate();
@@ -430,54 +513,55 @@ function build_nextMonth($month, $year)
                             $year = $y;
 
                         }
-                        
+
                     }
                     echo build_calendar($month, $year);
 
                     ?>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
-        
-    </section>
+        </section>
 
-    <section class="addTask">
-        <div>
-            <i class='bx bx-plus'></i>
-        </div>
-    </section>
-    <script>
+        <section class="addTask">
+            <div>
+                <i class='bx bx-plus'></i>
+            </div>
+        </section>
+        <script>
 
-        var now = document.getElementById("now-empty");
-        var overdue = document.getElementById("overdue-empty");
-        var upcoming = document.getElementById("upcoming-empty");
+            var now = document.getElementById("now-empty");
+            var overdue = document.getElementById("overdue-empty");
+            var upcoming = document.getElementById("upcoming-empty");
 
-        function changeIcon(x, y){
-            x.classList.toggle("bxs-right-arrow");
-            
-            // now.classList.toggle("hidediv");
+            function changeIcon(x, y) {
+                x.classList.toggle("bxs-right-arrow");
 
-            if(y.style.display === "none"){
-                y.style.display = "block";
+                // now.classList.toggle("hidediv");
+
+                if (y.style.display === "none") {
+                    y.style.display = "block";
+                }
+                else {
+                    y.style.display = "none";
+                }
             }
-            else {
-                y.style.display = "none";
+
+            var header = document.getElementsById('nav-link');
+            var btns = header.getElementsByClassName('sidebtn');
+
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
             }
-        }
-
-        var header = document.getElementsById('nav-link');
-        var btns = header.getElementsByClassName('sidebtn');
-
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-        }
 
 
-    </script>
+        </script>
 </body>
+
 </html>
