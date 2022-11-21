@@ -99,7 +99,7 @@ nav.col2 ul li a:hover{
   width: 687px;
   height: 200px;
   top: 232px;
-  left: 450px;
+  left: 365px;
 }
 .tagline p.text1 {
   width: 687px;
@@ -151,6 +151,7 @@ nav.col2 ul li a:hover{
   color: black;
   background:#fffbf1 ;
   transition: .5s;
+  font-weight: bold;
 }
 .tagline img {
   margin: 100px 115px;
@@ -164,7 +165,7 @@ nav.col2 ul li a:hover{
 }
 .long-div .lside-div {
   position: relative;
-  margin-left: 220px;
+  margin-left: 120px;
 }
 .lside-div p.t1 {
   font-family: "Fredoka";
@@ -467,4 +468,8 @@ img {
 .footer-final a {
   text-decoration: none;
   color: #6c8054;
+}
+.footer-final a:hover{
+  color: #fffbf1;
+  transition: .5s;
 }
