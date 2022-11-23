@@ -426,46 +426,6 @@ function build_nextMonth($month, $year)
             </form>
 
         </section>
-        <!-- <section class="filter-container">
-            <h1>Filters & Labels</h1>
-
-            <form action="" method="get" class="filter-labels" id="filter-labels">
-
-                <div class="work-nav">
-                    <button class="urgent" name="urgentbtn" id="urgent" style="color: #F24E1E;">urgent</button>
-                    <button class="high" name="highbtn" id="high" style="color: #E69B00;">high</button>
-                    <button class="normal" name="normalbtn" id="normal" style="color: #005B96;">normal</button>
-                    <button class="low" name="lowbtn" id="low" style="color: #6C8054;">low</button>
-                </div>
-
-                URGENT 
-                <?php
-            // if(isset($_GET['urgentbtn']) || !isset($_GET['highbtn'])){ ?>
-
-                    <div class="urgent-body" id="urgent-body">
- 
-                        <section class="urgent-section">
-
-                            <div class="urgent-empty" id="urgent-empty" name="urgent-empty">
-                                <div class="empty-container">
-                                    <img src="http://localhost/taskism/images/urgent.png" alt="urgent">
-                                </div>
-                                <div class="text">
-                                    <p class="span">Yay! No urgent tasks!</p>
-                                    <p class="span-sub">Urgent tasks will appear here.</p>
-                                </div>
-                            </div>
-
-                        </section>
-
-                    </div>
-                <?php
-            // } ?>
-
-            </form>
-
-
-        </section> -->
         <?php } ?>
     </section>
    
