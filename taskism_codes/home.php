@@ -161,7 +161,7 @@ function build_nextMonth($month, $year)
 
     <!-- LOGO -->
     <title>taskism</title>
-    <link rel="icon" type="image/x-icon" href="http://localhost/taskism/images/logo.png">
+    <link rel="icon" type="image/x-icon" href="http://localhost/taskism_images/logo.png">
 
     <!-- CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -169,12 +169,8 @@ function build_nextMonth($month, $year)
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- SCRIPT -->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.js"></script> -->
-
     <style>
-        <?php include "style.css" ?>
+        <?php include "home.css" ?>
     </style>
 
 
@@ -207,17 +203,12 @@ function build_nextMonth($month, $year)
 
             <div class="profile">
                 <div class="profile-container">
-                    <img src="http://localhost/taskism/images/gudetama.png" alt="">
+                    <img src="http://localhost/taskism_images/gudetama.png" alt="">
                 </div>
 
                 <div class="profile-link">
                     <a><button class="help-link" onclick="" id="helpBtn"><i class='bx bx-help-circle'></i> help</button></a>
                     <button class="logout-link" onclick="" name="logout"><i class='bx bx-exit'></i> logout</button>
-                    <?php 
-                    // if(isset($_GET['logout'])){
-                        //     unset($_COOKIE['user']); 
-                        // setCookie("user", "", time()-((365)* 24 * 60 * 60 * 1000)); 
-                    //  }?>
                 </div>
             </div>
 
@@ -316,7 +307,7 @@ function build_nextMonth($month, $year)
 
                         <div class="now-empty" id="now-empty" name="now">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Enthusiastic-pana.png" alt="">
+                                <img src="http://localhost/taskism_images/Enthusiastic-pana.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No tasks for today!</p>
@@ -336,7 +327,7 @@ function build_nextMonth($month, $year)
 
                         <div class="overdue-empty" id="overdue-empty" name="overdue">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Honesty-amico.png" alt="">
+                                <img src="http://localhost/taskism_images/Honesty-amico.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No overdue tasks!</p>
@@ -356,7 +347,7 @@ function build_nextMonth($month, $year)
 
                         <div class="upcoming-empty" id="upcoming-empty" name="upcoming">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Product quality-rafiki.png" alt="">
+                                <img src="http://localhost/taskism_images/Product quality-rafiki.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No upcoming taks!</p>
@@ -380,7 +371,7 @@ function build_nextMonth($month, $year)
 
                         <div class="done-empty" id="done-empty" name="done-empty">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Feeling Blue-bro.png" alt="">
+                                <img src="http://localhost/taskism_images/Feeling Blue-bro.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Oops! You haven't done any tasks yet.</p>
@@ -422,7 +413,7 @@ function build_nextMonth($month, $year)
 
                         <div class="urgent-empty" id="urgent-empty" name="urgent-empty">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/urgent.png" alt="urgent">
+                                <img src="http://localhost/taskism_images/urgent.png" alt="urgent">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No urgent tasks!</p>
@@ -440,7 +431,7 @@ function build_nextMonth($month, $year)
 
                         <div class="high-empty" id="high-empty" name="high-empty">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Enthusiastic-bro.png" alt="">
+                                <img src="http://localhost/taskism_images/Enthusiastic-bro.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No high priority tasks!</p>
@@ -459,7 +450,7 @@ function build_nextMonth($month, $year)
 
                         <div class="normal-empty" id="normal-empty" name="normal-empty">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Freelancer-bro.png" alt="">
+                                <img src="http://localhost/taskism_images/Freelancer-bro.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No normal priority tasks!</p>
@@ -479,7 +470,7 @@ function build_nextMonth($month, $year)
 
                         <div class="low-empty" id="low-empty" name="low-empty">
                             <div class="empty-container">
-                                <img src="http://localhost/taskism/images/Cheer up-rafiki.png" alt="">
+                                <img src="http://localhost/taskism_images/Cheer up-rafiki.png" alt="">
                             </div>
                             <div class="text">
                                 <p class="span">Yay! No low priority tasks!</p>
