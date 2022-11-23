@@ -146,8 +146,6 @@ function build_nextMonth($month, $year)
 
     return "<span class='next-icon'  style='color: #DC9C74;'><a style='color: #DC9C74;font-weight:bold;' href='?m=" . $nextMonth . "&y=" . $nextYear . "'> <i class='bx bx-right-arrow-circle' style='color: #DC9C74; font-size: 24px;'></i></a></span>";
 }
-
-
 ?>
 
 
@@ -171,6 +169,10 @@ function build_nextMonth($month, $year)
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- SCRIPT -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.js"></script> -->
+
     <style>
         <?php include "style.css" ?>
     </style>
@@ -179,7 +181,7 @@ function build_nextMonth($month, $year)
 
 </head>
 
-<body>
+<body onload="checkCookie()">
 
     <!-- NAVIGATION -->
     <section class="navigation-container" id="navigation-container">
@@ -209,13 +211,83 @@ function build_nextMonth($month, $year)
                 </div>
 
                 <div class="profile-link">
-                    <a><button class="help-link"><i class='bx bx-help-circle'></i> help</button></a>
-                    <a href="#"><button class="logout-link"><i class='bx bx-exit'></i> logout</button></a>
+                    <a><button class="help-link" onclick="" id="helpBtn"><i class='bx bx-help-circle'></i> help</button></a>
+                    <button class="logout-link" onclick="" name="logout"><i class='bx bx-exit'></i> logout</button>
+                    <?php 
+                    // if(isset($_GET['logout'])){
+                        //     unset($_COOKIE['user']); 
+                        // setCookie("user", "", time()-((365)* 24 * 60 * 60 * 1000)); 
+                    //  }?>
                 </div>
             </div>
 
         </form>
 
+    </section>
+
+    <section class="help-modal">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>welcome, name!</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <h3>user manual</h3>
+                    <br />
+                    <p>our website is incredibly simple to access and utilize.
+                        here are the following things you can do inside our website:</p>
+                    
+
+                    <div class="manual-content">
+                        <form method="post">
+                            <div class="addtask">
+                                <i class='bx bx-plus'></i>
+                            </div>
+                            <div class="description">click/tap this if you want to add new task.</div>
+                            <button><i class='bx bx-home-alt'></i> home</button>
+                            <div class="description">this will navigate you to the homepage of the website where you can see your to-do tasks instantly.</div>
+                            <button><i class='bx bx-grid-alt'></i> filters & labels</button>
+                            <div class="description">this will navigate you to the filters page of the website where you can see your tasks organized according to its priority level.</div>
+                            <button class="todo" name="todo" id="todo">to do</button>
+                            <div class="description">this is under the homepage where you can see your todo tasks organized according to its due date.</div>
+                            <h1 class="now-head"><i class='bx bxs-down-arrow'></i>&nbsp;&nbsp;today</h1>
+                            <div class="description">this is under the to do tab where you can see your todo tasks scheduled today.</div>
+                            <h1 class="now-head"><i class='bx bxs-down-arrow'></i>&nbsp;&nbsp;overdue</h1>
+                            <div class="description">this is under the to do tab where you can see your todo tasks scheduled before today.</div>
+                            <h1 class="now-head"><i class='bx bxs-down-arrow'></i>&nbsp;&nbsp;upcoming</h1>
+                            <div class="description">this is under the to do tab where you can see your todo tasks scheduled onwards.</div>
+                            <button class="done" name="done" id="done">done</button>
+                            <div class="description">this is under the homepage where you can see your achieved tasks.</div>
+                            <button class="urgent" name="urgentbtn" id="urgent" style="color: #F24E1E;">urgent</button>
+                            <div class="description">this is under the filters & labels tab where you can see your urgent tasks.</div>
+                            <button class="high" name="highbtn" id="high" style="color: #E69B00;">high</button>
+                            <div class="description">this is under the filters & labels tab where you can see your high priority tasks.</div>
+                            <button class="normal" name="normalbtn" id="normal" style="color: #005B96;">normal</button>
+                            <div class="description">this is under the filters & labels tab where you can see your normal priority tasks.</div>
+                            <button class="low" name="lowbtn" id="low" style="color: #6C8054;">low</button>
+                            <div class="description">this is under the filters & labels tab where you can see your low priority tasks.</div>
+
+                            <h1>Calendar</h1>
+                            <div class="description">this is displayed in every page to make you keep track of the date. this calendar is a non-event calendar so you can only see the next and previous months but you cannot add events to it.</div>
+
+
+                            <div>
+                                <button class="getStarted">get started!</button>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
     <!-- HOME BODY -->
@@ -300,7 +372,7 @@ function build_nextMonth($month, $year)
 
                 <?php
             } elseif (isset($_POST['done'])) {
-            ?>
+                ?>
                 <!-- DONE -->
                 <div class="done-body" id="done-body">
 
@@ -343,9 +415,9 @@ function build_nextMonth($month, $year)
                     <button class="low" name="lowbtn" id="low" style="color: #6C8054;">low</button>
                 </div>
 
-            <?php if(isset($_POST['urgentbtn'])){ ?>
+                <?php if (isset($_POST['urgentbtn'])) { ?>
                 <div class="urgent-body" id="urgent-body">
-    
+
                     <section class="urgent-section">
 
                         <div class="urgent-empty" id="urgent-empty" name="urgent-empty">
@@ -361,11 +433,11 @@ function build_nextMonth($month, $year)
                     </section>
 
                 </div>
-            <?php } elseif(isset($_POST['highbtn'])){ ?>
+                <?php } elseif (isset($_POST['highbtn'])) { ?>
                 <div class="high-body" id="high-body">
- 
+
                     <section class="high-section">
-    
+
                         <div class="high-empty" id="high-empty" name="high-empty">
                             <div class="empty-container">
                                 <img src="http://localhost/taskism/images/Enthusiastic-bro.png" alt="">
@@ -375,12 +447,12 @@ function build_nextMonth($month, $year)
                                 <p class="span-sub">High priority tasks will appear here.</p>
                             </div>
                         </div>
-    
+
                     </section>
- 
+
                 </div>
 
-            <?php } elseif(isset($_POST['normalbtn'])){ ?>
+                <?php } elseif (isset($_POST['normalbtn'])) { ?>
                 <div class="normal-body" id="normal-body">
 
                     <section class="normal-section">
@@ -399,129 +471,183 @@ function build_nextMonth($month, $year)
 
                 </div>
 
-            <?php }elseif(isset($_POST['lowbtn'])){ ?>
+                <?php } elseif (isset($_POST['lowbtn'])) { ?>
 
-            <div class="low-body" id="low-body">
+                <div class="low-body" id="low-body">
 
-                <section class="low-section">
+                    <section class="low-section">
 
-                    <div class="low-empty" id="low-empty" name="low-empty">
-                        <div class="empty-container">
-                            <img src="http://localhost/taskism/images/Cheer up-rafiki.png" alt="">
+                        <div class="low-empty" id="low-empty" name="low-empty">
+                            <div class="empty-container">
+                                <img src="http://localhost/taskism/images/Cheer up-rafiki.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p class="span">Yay! No low priority tasks!</p>
+                                <p class="span-sub">Low priority tasks will appear here.</p>
+                            </div>
                         </div>
-                        <div class="text">
-                            <p class="span">Yay! No low priority tasks!</p>
-                            <p class="span-sub">Low priority tasks will appear here.</p>
-                        </div>
-                    </div>
 
-                </section>
+                    </section>
 
-            </div>
+                </div>
 
-            <?php } ?>
+                <?php } ?>
 
 
 
             </form>
 
         </section>
+
         <?php } ?>
     </section>
-   
+
 
     <!-- CALENDAR -->
-        <section class="calendar-container">
+    <section class="calendar-container">
 
-            <?php
-    parse_str($_SERVER['QUERY_STRING']);
+        <?php
+            parse_str($_SERVER['QUERY_STRING']);
 
-    if ($m == "") {
+            if ($m == "") {
 
-        $dateComponents = getdate();
-        $month = $dateComponents['mon'];
-        $year = $dateComponents['year'];
-    } else {
+                $dateComponents = getdate();
+                $month = $dateComponents['mon'];
+                $year = $dateComponents['year'];
+            } else {
 
-        $month = $m;
-        $year = $y;
+                $month = $m;
+                $year = $y;
 
-    }
+            }
 
 
 
-    ?>
-            <div class="fixed-calendar">
-                <h1>Calendar</h1>
+            ?>
+        <div class="fixed-calendar">
+            <h1>Calendar</h1>
 
-                <div class="container">
+            <div class="container">
 
-                    <div class="calendarHead">
-                        <?php
+                <div class="calendarHead">
+                    <?php
 
-                    parse_str($_SERVER['QUERY_STRING']);
+                        parse_str($_SERVER['QUERY_STRING']);
 
-                    if (isset($m)) {
-                        if ($m == "") {
+                        if (isset($m)) {
+                            if ($m == "") {
 
-                            $dateComponents = getdate();
-                            $month = $dateComponents['mon'];
-                            $year = $dateComponents['year'];
-                        } else {
+                                $dateComponents = getdate();
+                                $month = $dateComponents['mon'];
+                                $year = $dateComponents['year'];
+                            } else {
 
-                            $month = $m;
-                            $year = $y;
+                                $month = $m;
+                                $year = $y;
+
+                            }
 
                         }
+                        echo build_calendar($month, $year);
 
-                    }
-                    echo build_calendar($month, $year);
-
-                    ?>
-                    </div>
+                        ?>
                 </div>
-
             </div>
 
-        </section>
+        </div>
 
-        <section class="addTask">
-            <div>
-                <i class='bx bx-plus'></i>
-            </div>
-        </section>
-        <script>
+    </section>
 
-            var now = document.getElementById("now-empty");
-            var overdue = document.getElementById("overdue-empty");
-            var upcoming = document.getElementById("upcoming-empty");
+    <section class="addTask">
+        <div>
+            <i class='bx bx-plus'></i>
+        </div>
+    </section>
 
-            function changeIcon(x, y) {
-                x.classList.toggle("bxs-right-arrow");
 
-                // now.classList.toggle("hidediv");
+    <script>
 
-                if (y.style.display === "none") {
-                    y.style.display = "block";
+        var now = document.getElementById("now-empty");
+        var overdue = document.getElementById("overdue-empty");
+        var upcoming = document.getElementById("upcoming-empty");
+
+        function changeIcon(x, y) {
+            x.classList.toggle("bxs-right-arrow");
+
+            // now.classList.toggle("hidediv");
+
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            }
+            else {
+                y.style.display = "none";
+            }
+        }
+
+
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+        var start = document.getElementsByClassName("getStarted")[0];
+        var btn = document.getElementById("helpBtn");
+
+        var myTimeout = setTimeout(showModal, 1000);
+
+        function showModal(){
+            modal.style.display = "block";
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
                 }
-                else {
-                    y.style.display = "none";
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
                 }
             }
+            return "";
+        }
 
-            var header = document.getElementsById('nav-link');
-            var btns = header.getElementsByClassName('sidebtn');
-
-            for (var i = 0; i < btns.length; i++) {
-                btns[i].addEventListener("click", function () {
-                    var current = document.getElementsByClassName("active");
-                    current[0].className = current[0].className.replace(" active", "");
-                    this.className += " active";
-                });
+        function checkCookie() {
+            let user = getCookie("user");
+            if (user != "") {
+                clearTimeout(myTimeout);
+            } else {
+                setCookie("user", 1, 365);
+                showModal();
             }
+        }
 
 
-        </script>
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        start.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+    </script>
 </body>
 
 </html>
