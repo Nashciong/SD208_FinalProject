@@ -1,0 +1,285 @@
+body{
+    background: #DC9C74;
+    
+
+}
+.reglogo {
+    position: absolute;
+    width: 460px;
+    height: 384px;
+    left: 64px;
+    top: 83px;
+    margin-left: 8%;
+
+}
+
+
+.text{
+    position: absolute;
+width: 410px;
+height: 116px;
+left: 167px;
+top: 6px;
+
+font-family: 'Fredoka One';
+font-style: normal;
+font-weight: 400;
+font-size: 60px;
+line-height: 116px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+margin-top:0px;
+margin-left: 7%;
+
+
+
+
+color: #6C8054;
+}
+
+.text2{
+    position: absolute;
+    width: 367px;
+    height: 25px;
+    left: 245px;
+    top: 81px;
+    
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+
+    
+    color: #6F4E37;
+    margin-left: 6%;
+
+}
+
+.qoute1{
+    position: absolute;
+    width: 623px;
+    height: 60px;
+    top: 428px;
+    
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-left: 12%;
+
+    color: #6F4E37;
+
+}
+.qoute2{
+    position: absolute;
+    width: 193px;
+    height: 29px;
+    left: 328px;
+    top: 475px;
+    
+    font-family: 'Fredoka';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    
+    color: #6C8054;
+    margin-left: 12%;
+    
+}
+
+.register-form{
+    box-sizing: border-box;
+
+position: absolute;
+width: 370px;
+height: 653px;
+left: 600px;
+top: 25px;
+background: #EBC6A9;
+border: 1px solid #6C8054;
+border-radius: 25px;
+left: 50%;
+margin-left: 22%;
+}
+
+.container {
+    padding: 20px;
+   
+  }
+  input[type=text], input[type=password] {
+    box-sizing: border-box;
+    position: absolute;
+    width: 337px;
+    height: 32px;
+    left: 13px;
+    /* top: 178.39px; */
+    padding: 6px;
+    background: #D0F3A5;
+    border: 1px solid #6C8054;
+    border-radius: 20px;
+}
+
+  .here{
+    position: absolute;
+ left: 91px;
+    height: 52.37px;
+   
+    
+
+    font-family: 'Fredoka One';
+font-style: normal;
+font-weight: 400;
+font-size: 27px;
+line-height: 48px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+color: #6C8054;
+}
+
+#confirmpassword{
+top: 375.39px;
+
+}
+#password{
+top: 334.39px;  
+}
+#email{
+    top: 291.39px;  
+}
+#phone{
+    top: 249.39px;  
+
+}
+
+#lastname{
+    top: 157.39px;
+}
+#firstname{
+top: 107.39px;
+}
+#bday{
+    top: 203.39px;
+ 
+}
+.signin{
+    position: absolute;
+width: 313px;
+height: 20.73px;
+left: 18px;
+top: 496.64px;
+
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 19px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #6C8054;
+
+}
+.Poptional{
+    position: absolute;
+width: 194px;
+height: 18px;
+left: 26px;
+top: 398px;
+
+font-family: 'Fredoka';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #6C8054;
+
+}
+#lgnhere{
+    color: #DC9C74;
+}
+.choose{
+ 
+
+position: absolute;
+width: 146px;
+height: 45px;
+left: 21px;
+top: 439px;
+
+
+}
+
+.registerbtn{
+    position: absolute;
+width: 101px;
+height: 39.78px;
+left: 110px;
+top: 467px;
+
+background: #6C8054;
+border-radius: 20px;
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 19px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #FFFBF1;
+padding-left: 14px;
+
+
+}
+.or{
+    position: absolute;
+width: 160px;
+height: 20.73px;
+left: 105px;
+top: 18.74000000000001px ;
+
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #6C8054;
+}
+
+.icons{
+    position: absolute;
+width: 117px;
+height: 27.28px;
+left: 156px;
+top: 595px;
+}
