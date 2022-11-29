@@ -34,7 +34,7 @@ function build_calendar($month, $year)
     $calendar .= "</h3>";
     $calendar .= "<tr>";
 
-    // Create the calendar headers
+    //calendar headers
 
     foreach ($daysOfWeek as $day) {
         $calendar .= "<th class='header'>$day</th>";
