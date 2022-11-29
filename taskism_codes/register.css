@@ -1,8 +1,9 @@
-body{
+body {
     background: #DC9C74;
-    
+
 
 }
+
 .reglogo {
     position: absolute;
     width: 460px;
@@ -14,60 +15,60 @@ body{
 }
 
 
-.text{
+.text {
     position: absolute;
-width: 410px;
-height: 116px;
-left: 167px;
-top: 6px;
+    width: 410px;
+    height: 116px;
+    left: 167px;
+    top: 6px;
 
-font-family: 'Fredoka One';
-font-style: normal;
-font-weight: 400;
-font-size: 60px;
-line-height: 116px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-margin-top:0px;
-margin-left: 7%;
-
-
+    font-family: 'Fredoka One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 116px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    margin-top: 0px;
+    margin-left: 7%;
 
 
-color: #6C8054;
+
+
+    color: #6C8054;
 }
 
-.text2{
+.text2 {
     position: absolute;
     width: 367px;
     height: 25px;
     left: 245px;
     top: 81px;
-    
+
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 25px;
     /* identical to box height */
-    
+
     display: flex;
     align-items: center;
     letter-spacing: 0.1em;
 
-    
+
     color: #6F4E37;
     margin-left: 6%;
 
 }
 
-.qoute1{
+.qoute1 {
     position: absolute;
     width: 623px;
     height: 60px;
     top: 428px;
-    
+
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
@@ -82,50 +83,53 @@ color: #6C8054;
     color: #6F4E37;
 
 }
-.qoute2{
+
+.qoute2 {
     position: absolute;
     width: 193px;
     height: 29px;
     left: 328px;
     top: 475px;
-    
+
     font-family: 'Fredoka';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 29px;
     /* identical to box height */
-    
+
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.1em;
-    
+
     color: #6C8054;
     margin-left: 12%;
-    
+
 }
 
-.register-form{
+.register-form {
     box-sizing: border-box;
 
-position: absolute;
-width: 370px;
-height: 653px;
-left: 600px;
-top: 25px;
-background: #EBC6A9;
-border: 1px solid #6C8054;
-border-radius: 25px;
-left: 50%;
-margin-left: 22%;
+    position: absolute;
+    width: 370px;
+    height: 634px;
+    left: 600px;
+    top: 25px;
+    background: #EBC6A9;
+    border: 1px solid #6C8054;
+    border-radius: 25px;
+    left: 33%;
+    margin-left: 22%;
 }
 
 .container {
     padding: 20px;
-   
-  }
-  input[type=text], input[type=password] {
+
+}
+
+input[type=text],
+input[type=password] {
     box-sizing: border-box;
     position: absolute;
     width: 337px;
@@ -138,148 +142,237 @@ margin-left: 22%;
     border-radius: 20px;
 }
 
-  .here{
+.here {
     position: absolute;
- left: 91px;
+    left: 91px;
     height: 52.37px;
-   
-    
+
+
 
     font-family: 'Fredoka One';
-font-style: normal;
-font-weight: 400;
-font-size: 27px;
-line-height: 48px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-color: #6C8054;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #6C8054;
 }
 
-#confirmpassword{
-top: 375.39px;
-
-}
-#password{
-top: 334.39px;  
-}
-#email{
-    top: 291.39px;  
-}
-#phone{
-    top: 249.39px;  
+#confirmpassword {
+    top: 375.39px;
 
 }
 
-#lastname{
+#password {
+    top: 334.39px;
+}
+
+#email {
+    top: 291.39px;
+}
+
+#phone {
+    top: 249.39px;
+
+}
+
+#lastname {
     top: 157.39px;
 }
-#firstname{
-top: 107.39px;
+
+#firstname {
+    top: 107.39px;
 }
-#bday{
+
+#bday {
     top: 203.39px;
- 
+
 }
-.signin{
+
+.signin {
     position: absolute;
-width: 313px;
-height: 20.73px;
-left: 18px;
-top: 496.64px;
+    width: 313px;
+    height: 20.73px;
+    left: 18px;
+    top: 527px;
 
-font-family: 'Quicksand';
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-line-height: 19px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
 
-color: #6C8054;
+    color: #6C8054;
+
 
 }
-.Poptional{
+
+.Poptional {
     position: absolute;
-width: 194px;
-height: 18px;
-left: 26px;
-top: 398px;
+    width: 194px;
+    height: 18px;
+    left: 26px;
+    top: 398px;
 
-font-family: 'Fredoka';
-font-style: normal;
-font-weight: 700;
-font-size: 15px;
-line-height: 18px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
+    font-family: 'Fredoka';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
 
-color: #6C8054;
+    color: #6C8054;
 
 }
-#lgnhere{
+
+#lgnhere {
+    color: #DC9C74;
+
+}
+
+.choose {
+
+
+    position: absolute;
+    width: 146px;
+    height: 45px;
+    left: 21px;
+    top: 439px;
+
+
+}
+
+.registerbtn {
+    position: absolute;
+    width: 119px;
+    height: 40px;
+    left: 121px;
+    top: 484px;
+    background: #6C8054;
+    border-radius: 20px;
+    border: 1px solid #6C8054;
+
+    background: #6C8054;
+    border-radius: 20px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+
+    color: #FFFBF1;
+    padding-left: 28px;
+    cursor: pointer;
+
+
+}
+
+.or {
+    position: absolute;
+    width: 160px;
+    height: 20.73px;
+    left: 105px;
+    top: 18.74000000000001px;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+
+    color: #6C8054;
+}
+
+.icon1 {
+    position: absolute;
+    width: 117px;
+    height: 27.28px;
+    left: 136px;
+    top: 597px;
     color: #DC9C74;
 }
-.choose{
- 
 
-position: absolute;
-width: 146px;
-height: 45px;
-left: 21px;
-top: 439px;
-
-
+.icon2 {
+    position: absolute;
+    width: 117px;
+    height: 27.28px;
+    left: 165px;
+    top: 597px;
+    color: #DC9C74;
 }
 
-.registerbtn{
+.icon3 {
     position: absolute;
-width: 101px;
-height: 39.78px;
-left: 110px;
-top: 467px;
-
-background: #6C8054;
-border-radius: 20px;
-font-family: 'Quicksand';
-font-style: normal;
-font-weight: 700;
-font-size: 15px;
-line-height: 19px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-
-color: #FFFBF1;
-padding-left: 14px;
-
-
-}
-.or{
-    position: absolute;
-width: 160px;
-height: 20.73px;
-left: 105px;
-top: 18.74000000000001px ;
-
-font-family: 'Quicksand';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 19px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-
-color: #6C8054;
+    width: 117px;
+    height: 27.28px;
+    left: 196px;
+    top: 597px;
+    color: #DC9C74;
 }
 
-.icons{
+.footer {
     position: absolute;
-width: 117px;
-height: 27.28px;
-left: 156px;
-top: 595px;
+    width: 620px;
+    height: 24px;
+    left: 368px;
+    top: 676px;
+
+    font-family: 'Fredoka One';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding-bottom: 20px;
+
+    color: #6C8054;
+}
+span.bold{
+    font-weight: 600;
+}
+
+
+
+
+
+/* this should be removed */
+
+.popup {
+    width: 254px;
+    line-height: 37px;
+    background:  #D0F3A5;
+    border-radius: 20px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
 }

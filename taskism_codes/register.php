@@ -1,9 +1,12 @@
 <?php
+ob_start();
+session_start();
 require_once 'config.php';
+
 ?>
 
 <?php
-define('CSS_PATH', 'template/css/'); //define CSS path 
+define('CSS_PATH', 'template/css/');
 
 ?>
 
@@ -27,34 +30,45 @@ define('CSS_PATH', 'template/css/'); //define CSS path
 
 <body>
 
-<?php
+ <?php
 if (isset($_POST['create'])) {
 
- $firstname = $_POST['firstname'];
- $lastname = $_POST['lastname'];
- $birthday = $_POST['birthday'];
- $phone = $_POST['phone'];
- $email = $_POST['email'];
- $password = ($_POST['password']);
- $confirmpassword = ($_POST['confirmpassword']);
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $birthday = $_POST['birthday'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $password = ($_POST['password']);
+    $confirmpassword = ($_POST['confirmpassword']);
+    
 
- $sql = "INSERT INTO register (firstname, lastname, birthday, phone, email, password, confirmpassword) VALUES(?,?,?,?,?,?,?)";
- $stmtinsert = $db->prepare($sql);
- $result = $stmtinsert->execute([$firstname, $lastname, $email, $phone, $email, $password, $confirmpassword]);
- if ($result) {
+    $sql = "INSERT INTO register (firstname, lastname, birthday, phone, email, password, confirmpassword) VALUES(?,?,?,?,?,?,?)";
+    $stmtinsert = $db->prepare($sql);
 
-     echo 'succesfully added.';
- } else {
-     echo 'unable to add';
- }
+    if ($password == $confirmpassword) {
+        $result = $stmtinsert->execute([$firstname, $lastname, $email, $phone, $email, $password, $confirmpassword]);
+        
+    } else {
+        echo ' password did not match';
+    }
+
+    // if ($result) {
+
+    //     echo 'succesfully added.';
+    // } else {
+    //     echo 'unable to add';
+    // }
 
 }?>
+
+
+
 
     <div class="all">
         <div class="logoimage">
             <p class="text">taskism</p>
             <p class="text2">makes your day more productive</p>
-            <img src="../src/Digital tools-pana.png" alt="" class="reglogo">
+            <img src="/taskism_images/Digital tools-pana.png" alt="" class="reglogo">
         </div>
 
 
@@ -81,16 +95,21 @@ if (isset($_POST['create'])) {
                     <input type="text" placeholder="phone number (optional)" name="phone" id="phone" required>
                     <input type="password" placeholder="password" name="password" id="password" required>
                     <input type="password" placeholder="confirm password" name="confirmpassword" id="confirmpassword"
-                     required>
+                        required>
                     <p class="Poptional">profile photo (optional)</p>
                     <div class="choose">
                         <input type="file" id="myFile" name="filename">
                     </div>
-                    <input type="submit" name="create" class="registerbtn" value="register">
+
+                    <!-- onclick should be removed -->
+                
+                    <input type="submit"name="create" onclick="openPopup()" class="registerbtn" value="register">
                 </div>
+                
 
                 <div class="container signin">
-                    <p>already have an account? <a href="#"><span id="lgnhere">Log in here </span></a>. </p>
+                    <p>already have an account? <a style="text-decoration:none" href="#"><span id="lgnhere">Log in here
+                            </span></a>. </p>
                     <p class="or">or login with</p> <br> <br><br>
 
                 </div>
@@ -99,13 +118,10 @@ if (isset($_POST['create'])) {
 
             </form>
 
-            <div>
-            <a href="#" class="icons"> <i class='bx bxl-facebook'></i></a>
-            <a href="#" class="icons"> <i class='bx bxl-google'></i></a>
-            <a href="#" class="icons"> <i class='bx bxl-instagram' ></i>
-
-
-        </a>
+            <div class="icons">
+                <a href="#" class="icon1"> <i class='bx bxl-facebook bx-sm'></i></a>
+                <a href="#" class="icon2"> <i class='bx bxl-google bx-sm'></i></a>
+                <a href="#" class="icon3"> <i class='bx bxl-instagram bx-sm'></i></a>
             </div>
 
 
@@ -114,7 +130,37 @@ if (isset($_POST['create'])) {
 
     </div>
 
+    <div class="footer">
+        <p>privacy policy | terms & condition  © <span class="bold"> 2022 | taskism </span></p>
+        <p></p>
+    </div>
+<!-- this should be removed -->
+<div class="popup" id="popup">
+<h3>You are now registered! </h3>
+<button type="submit" onclick="closePopup()" class="done"> back to login</button>
 </div>
+
+
+<!-- script should be removed -->
+    <script>
+    let popup = document.getElementById("popup");
+
+    function openPopup(){
+    
+        popup.classList.add("open-popup");
+        
+    }
+
+    
+    function closePopup(){
+        popup.classList.remove("open-popup");
+    }
+
+   
+
+    
+    
+   </script>  
 </body>
 
 </html>
