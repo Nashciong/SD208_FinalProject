@@ -4,10 +4,10 @@ error_reporting(~E_NOTICE);
 function build_calendar($month, $year)
 {
 
-    // Create array containing abbreviations of days of week.
+    // abbreviations of days of week.
     $daysOfWeek = array('Sn', 'M', 'T', 'W', 'Th', 'F', 'S');
 
-    // What is the first day of the month in question?
+    // First day of the month in question
     $firstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
 
     // How many days does this month contain?
