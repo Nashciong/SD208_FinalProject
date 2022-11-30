@@ -45,11 +45,12 @@ if (isset($_POST['create'])) {
     $sql = "INSERT INTO register (firstname, lastname, birthday, phone, email, password, confirmpassword) VALUES(?,?,?,?,?,?,?)";
     $stmtinsert = $db->prepare($sql);
 
-    if ($password == $confirmpassword) {
+    if ($password == $confirmpassword ) {
+        
         $result = $stmtinsert->execute([$firstname, $lastname, $email, $phone, $email, $password, $confirmpassword]);
         
-    } else {
-        echo ' password did not match';
+    }{
+        // echo ' password did not match';
     }
 
     // if ($result) {
@@ -84,26 +85,24 @@ if (isset($_POST['create'])) {
         <div class="register-form">
 
 
-            <form action="register.php" method="post">
+            <form action="register.php" name="Form" onsubmit="return openPopup()" method="post">
                 <div class="container">
                     <p class="here">register here</p>
 
-                    <input type="text" placeholder="enter first name" name="firstname" id="firstname" required>
-                    <input type="text" placeholder="enter last name" name="lastname" id="lastname" required>
-                    <input type="text" placeholder="date of birth" name="birthday" id="bday" required>
-                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-                    <input type="text" placeholder="phone number (optional)" name="phone" id="phone" required>
-                    <input type="password" placeholder="password" name="password" id="password" required>
+                    <input type="text" placeholder="enter first name" name="firstname" id="firstname" >
+                    <input type="text" placeholder="enter last name" name="lastname" id="lastname" >
+                    <input type="text" placeholder="date of birth" name="birthday" id="bday" >
+                    <input type="text" placeholder="Enter Email" name="email" id="email" >
+                    <input type="text" placeholder="phone number (optional)" name="phone" id="phone" >
+                    <input type="password" placeholder="password" name="password" id="password" >
                     <input type="password" placeholder="confirm password" name="confirmpassword" id="confirmpassword"
-                        required>
+                        >
                     <p class="Poptional">profile photo (optional)</p>
                     <div class="choose">
                         <input type="file" id="myFile" name="filename">
                     </div>
-
-                    <!-- onclick should be removed -->
                 
-                    <input type="submit"name="create" onclick="openPopup()" class="registerbtn" value="register">
+                    <input type="submit"name="create" class="registerbtn" value="register">
                 </div>
                 
 
@@ -136,30 +135,69 @@ if (isset($_POST['create'])) {
     </div>
 <!-- this should be removed -->
 <div class="popup" id="popup">
-<h3>You are now registered! </h3>
-<button type="submit" onclick="closePopup()" class="done"> back to login</button>
+<h3>All fields are required!</h3>
+<button type="submit" onclick="closePopup1()" class="done"> OK</button>
 </div>
 
+<div class="valid" id="valid">
+    <h2 class="match">Password did not match!</h2>
+    <button type="submit" onclick="closePopup2()" class="done"> OK</button>
+</div>
+
+<div class="registered" id="registered">
+    <h2 class="match">You are now registered!</h2>
+    <!-- <button type="submit" onclick="closePopup3()" class="done"> OK</button> -->
+</div>
+
+<div class="must" id="must">
+    <h2 class="match">Password must contain 8 characters!</h2>
+    <button type="submit" onclick="closePopup4()" class="done"> OK</button>
+</div>
 
 <!-- script should be removed -->
-    <script>
+    <script  type="text/javascript">
     let popup = document.getElementById("popup");
+    let val = document.getElementById("valid");
+    let reg = document.getElementById("registered");
+    let mu = document.getElementById("must");
 
-    function openPopup(){
     
+  function openPopup() {
+    var a = document.forms["Form"]["firstname"].value;
+    var b = document.forms["Form"]["lastname"].value;
+    var c = document.forms["Form"]["birthday"].value;
+    var d = document.forms["Form"]["email"].value;
+    var d = document.forms["Form"]["phone"].value;
+    var e = document.forms["Form"]["password"].value;
+    var f = document.forms["Form"]["confirmpassword"].value;
+    if (a == null || a == "", b == null || b == "", c == null || c == "", d == null || d == "", e == null || e == "" , f == null || f == "") {
+
         popup.classList.add("open-popup");
-        
-    }
-
+      return false;
+    } else if (e !== f){
+        val.classList.add("open-popupvalid");
+        return false;
     
-    function closePopup(){
+    }
+    else{
+        reg.classList.add("open-popupregistered");
+       
+
+    }
+  }
+    
+    function closePopup1(){
         popup.classList.remove("open-popup");
     }
-
-   
-
-    
-    
+    function closePopup2(){
+        val.classList.remove("open-popupvalid");
+    }
+    function closePopup3(){
+        reg.classList.remove("open-popupregistered");
+    }
+    function closePopup4(){
+        reg.classList.remove("open-popupmust");
+    }
    </script>  
 </body>
 
