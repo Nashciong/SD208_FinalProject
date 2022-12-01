@@ -1,7 +1,13 @@
 <?php
-$con=mysqli_connect("localhost","root","","live-search");
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$db_name = "live-search";
+
+$con=mysqli_connect($hostname,$username,$password,$db_name );
 
 if(!$con){
-    echo "Connection Failed!" . mysqli_connect_error();
+    die ("Connection Failed!" ). mysqli_connect_error();
 }
 ?>
