@@ -5,7 +5,7 @@ if (isset($_POST['upcoming'])) {
 
     $upcoming = $_POST['upcoming'];
     
-    $myQuery = "SELECT fName, lName, Gender, statuss FROM users WHERE statuss LIKE '{$upcoming}%'";
+    $myQuery = "SELECT title, dueDate, statuss FROM task WHERE dueDate > '{$upcoming}%'";
 
     $result = mysqli_query($con, $myQuery);
 
@@ -22,18 +22,16 @@ if (isset($_POST['upcoming'])) {
             <tbody>
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $fname = $row['fName'];
-                    $lname = $row['lName'];
-                    $gender = $row['Gender'];
-                    $status = $row['statuss'];
+                    $title = $row['title'];
+                    $dueDate = $row['dueDate'];
+                    $statuss = $row['statuss'];
 
                 ?>
                     <tr style="line-height:5%;">
                         <td style="color:black ;font-family:Quicksand"><?php echo "<input type='checkbox'/>"; ?></td>
-                        <td style="color:black ;font-family:Quicksand"><?php echo $fname; ?></td>
-                        <td style="color:black ;font-family:Quicksand"><?php echo $lname; ?></td>
-                        <td style="color:black ;font-family:Quicksand"><?php echo $gender; ?></td>
-                        <td style="color:black ;font-family:Quicksand"><?php echo $status; ?></td>
+                        <td style="color:black ;font-family:Quicksand"><?php echo $title; ?></td>
+                        <td style="color:black ;font-family:Quicksand"><?php echo $dueDate; ?></td>
+                        <td style="color:black ;font-family:Quicksand"><?php echo $statuss; ?></td>
                         <td style="color:black ;font-family:Quicksand"><?php echo "<a href='' style=margin-left:220%>View</a>"; ?></td>
                     </tr>
                 <?php
