@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+    font-family: "Poppins";
+    justify-content: center;
+    align-items: center;
+    background: #fffbf1;
+}
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.8fr;
+  }
+  .nav-container .col1 {
+    position: relative;
+    margin: 45px 150px;
+    width: auto;
+    height: 39px;
+    font-family: "Fredoka";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: #6c8054;
+  }
+  .nav-container .col2 {
+    position: relative;
+    margin: 54px 0 54px -40px;
+    width: 100%;
+    height: 30px;
+  }
+  .nav-container .col3 {
+    position: relative;
+    margin: 42px auto;
+    cursor: pointer;
+  }
+  .col3 input.login {
+    box-sizing: border-box;
+    width: 113px;
+    height: 42px;
+    border: 1px solid #dc9c74;
+    border-radius: 20px;
+    margin-right: 18px;
+    cursor: pointer;
+    background: #fffbf1;
+    color: #dc9c74;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .col3 input.login:hover{
+    color: white;
+    transition: .5s;
+    background:#dc9c74;
+  }
+  .col3 input.register {
+    width: 113px;
+    height: 42px;
+    background: #dc9c74;
+    border: 1px solid #dc9c74;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .col3 input.register:hover{
+    color: #dc9c74;
+    background: #fffbf1;
+    transition: .5s;
+  }
+  nav.col2 ul li {
+    list-style: none;
+    display: inline;
+    margin-right: 40px;
+  }
+  nav.col2 ul li a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    align-items: center;
+    color: #dc9c74;
+  }
+  nav.col2 ul li a:hover{
+    font-weight: bold;
+    color: #6F4E37;
+    transition: .5s;
+  }
+
+.tagline{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tagline p.text1 {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 0.1em;
+    color: #222222;
+    width: 40%;
+    margin: auto;
+  }
+
+.tagline p.text2 {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: #222222;
+}
+
+.tagline input{
+    background: #dc9c74;
+    border: 2px solid #dc9c74;
+    border-radius: 30px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fffbf1;
+    padding: 15px;
+    margin-top: 47px;   
+    width: 175px;
+    letter-spacing: 0.1em;
+    font-family: "Poppins";
+}
+
+.tagline input:hover{
+    color: #dc9c74;
+    background:#fffbf1 ;
+    transition: .5s;
+    font-weight: bold;
+  }
+
+div.picture{
+    display: flex;
+}
+
+img.checklist {
+    margin: auto;
+    width: 20%;
+}
+
+.long-div{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+div.lside-div{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+div.left, div.right{
+    width: 50%;
+    margin-top: 70px;
+}
+
+div.right{
+    padding-left: 80px;
+}
+
+div.note2{
+    width: 50%;
+    text-align: right;
+}
+div.note3{
+    width: 50%;
+}
+div.note2 img, div.note3 img{
+    width: 80%;
+}
+
+.lside-div p.t1 {
+    font-family: "Fredoka";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #6c8054;
+}
+.lside-div p.t2,.lside-div p.t3,.lside-div p.t4 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 48px;
+    color: #222222;
+}
+.lside-div p.t5 {
+    width: 450px;
+    height: 38px;
+    font-family: "Fredoka";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    color: #6f4e37;
+    
+}
+
+div.team-quote{
+    text-align: center;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #222222;
+    width: 640px;
+    margin: auto;
+    margin-top: 70px;
+}
+
+
+div.bg-slant{
+    margin-top: 15%;
+    width: 100%;
+    background: #dc9c74;
+    transform: skew(0deg, -10deg) translateY(-140px);
+    height: 70vh;
+}
+
+div.footer-container{
+    z-index: 4;
+    /* position: relative;   */
+    display: flex;
+    margin-top: -33%;
+    background: #dc9c74;
+    /* height: 20%; */
+}
+div.lfooter{
+    width: 50%;
+    margin-left: 10%;
+    z-index: 4;
+}
+div.lfooter img{
+    width: 80%;
+    z-index: 4;
+}
+div.rfooter{
+    width: 50%;
+    margin-right: 10%;
+    z-index: 4;
+}
+.rfooter {
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+}
+.rfooter p {
+    font-family: "Fredoka";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: #fffbf1;
+}
+.rfooter h2 {
+    font-family: "Fredoka";  
+    color: #6c8054;
+    font-size: 90px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.rfooter input.button{
+    margin-top: 20px;
+    width: 145px;
+    padding: 15px;
+    background: #fffbf1;
+    border-radius: 30px;
+    border: 2px solid #fffbf1;
+    font-weight: 500;
+    font-size: 20px;
+    color: #dc9c74;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    letter-spacing: 0.1em;
+}
+.rfooter input:hover{
+    color: white;
+    background: #dc9c74;
+    transition: .5s;
+    font-weight: bold;
+}
+
+div.footer-final{
+    z-index: 5;
+    margin-top: -20px;
+    background-color: #dc9c74;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 30px;
+    color: #6c8054;
+    font-family: "Fredoka";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+}
+
+div.footer-final a{
+    color: #6c8054;
+}

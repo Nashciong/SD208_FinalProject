@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background: #EBC6A9;
+    display: flex;
+}
+
+section.logo{
+    width: 50%;
+    height: 90vh;
+}
+
+div.logoimage{
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+div.logoimage .text{
+    font-family: 'Fredoka';
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 116px;
+    letter-spacing: 0.1em;
+    color: #6C8054;
+}
+
+div.logoimage .text2{
+    font-family: 'Quicksand';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    color: #6F4E37;
+    margin-left: 20%;
+}
+
+div.logoimage .reglogo{
+    width: 80%;
+    margin-top: -8%;
+}
+
+div.quote{
+    margin-left: 25%;
+    margin-top: -8%;
+}
+
+div.quote .quote1{
+    font-family: 'Quicksand';
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #6F4E37;
+}
+
+div.quote .quote2{
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #6C8054;
+    margin-left: 70%;
+}
+
+section.login-form{
+    width: 50%;
+    height: 90vh;
+    display: flex;
+}
+
+form{
+    margin-top: 5%;
+    margin: auto;
+}   
+
+div.container{
+    margin: auto;
+    width: 450px;
+    height: 480px;  
+    background: #DC9C74;
+    border: 1px solid #6C8054;
+    border-radius: 25px;
+}
+
+div.container .here{
+    font-family: 'Fredoka';
+    font-weight: 700;
+    font-size: 27px;
+    letter-spacing: 0.1em;
+    color: #6C8054;
+    text-align: center;
+    padding: 40px;
+}
+
+div.container .inputs{
+    display: flex;
+    padding: 10px;
+}
+
+div.container input::placeholder{
+    color: #839a66;
+    font-weight: 700;
+    font-family: 'Quicksand';
+}
+
+div.container input:focus{
+    outline: none;
+    box-shadow: 0 0 0 2px #6C8054;
+}
+
+div.container input[type=text],
+div.container input[type=password]{
+    box-sizing: border-box;
+    width: 337px;
+    padding: 15px;
+    background: #D0F3A5;
+    border: 1px solid #6C8054;
+    color: #6C8054;
+    border-radius: 20px;
+    font-family: 'Quicksand';
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: auto;
+}
+
+
+.submitLogin{
+    display: flex;
+    margin: 25px;
+}
+
+.submitLogin .loginbtn{
+    margin: auto;
+    width: 125px;
+    padding: 12px;
+    background: #6C8054;
+    border-radius: 20px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+    color: #FFFBF1;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.submitLogin .loginbtn:hover{
+    color: #6C8054;
+    background-color: #EBC6A9;
+}
+
+.signup{
+    padding: 10px;
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #6C8054;
+    text-align: center;
+}
+
+.signup #rghere{
+    color: #FFFBF1;
+    font-size: 15px;
+    font-weight: 700;
+}
+.icons{
+    margin:auto;
+}
+
+.icons a{
+    text-align: center;
+    font-size: 15px;
+    color: #FFFBF1;
+}
+
+section.footer{
+    position: absolute;
+    height: 10vh;
+    width: 100%;
+    margin-top: 90vh;
+    z-index: 1;
+}
+
+section.footer p{
+    text-align: center;
+    padding: 20px;
+    color: #6C8054;
+    font-family: 'Fredoka';
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* this should be removed */
+
+.popup, .valid, .registered, .must {
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+
+    width: 254px;
+    line-height: 37px;
+    background:  #96b472;
+    border-radius: 20px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 30px;
+    color: #FFFBF1;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup, .open-popupvalid, .open-popupregistered, .open-popupmust {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.done{
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    color: #6C8054;
+    background-color: #EBC6A9;
+    border-radius: 20px;
+    width: 100px;
+}
